@@ -36,6 +36,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Manisha\" />
     <Folder Include="SS\" />
     <Folder Include="Test\" />
   </ItemGroup>
