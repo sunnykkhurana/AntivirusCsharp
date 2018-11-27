@@ -36,6 +36,8 @@
             this.btn_Done = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lbl_cntViruses = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_searching = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Folder
@@ -92,7 +94,7 @@
             this.listBox1.Location = new System.Drawing.Point(710, 26);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(304, 212);
+            this.listBox1.Size = new System.Drawing.Size(452, 212);
             this.listBox1.TabIndex = 5;
             // 
             // lbl_cntViruses
@@ -106,11 +108,33 @@
             this.lbl_cntViruses.Text = "Viruses";
             this.lbl_cntViruses.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 282);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Searching:";
+            this.label1.Visible = false;
+            // 
+            // lbl_searching
+            // 
+            this.lbl_searching.AutoSize = true;
+            this.lbl_searching.Location = new System.Drawing.Point(123, 282);
+            this.lbl_searching.Name = "lbl_searching";
+            this.lbl_searching.Size = new System.Drawing.Size(80, 17);
+            this.lbl_searching.TabIndex = 8;
+            this.lbl_searching.Text = "[Searching]";
+            this.lbl_searching.Visible = false;
+            // 
             // Antivirus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 328);
+            this.ClientSize = new System.Drawing.Size(1174, 355);
+            this.Controls.Add(this.lbl_searching);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_cntViruses);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btn_Done);
@@ -120,6 +144,7 @@
             this.Controls.Add(this.btn_Folder);
             this.Name = "Antivirus";
             this.Text = "Antivirus";
+            this.Load += new System.EventHandler(this.Antivirus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +160,7 @@
         private System.Windows.Forms.Button btn_Done;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lbl_cntViruses;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_searching;
     }
 }
