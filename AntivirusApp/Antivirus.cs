@@ -115,7 +115,7 @@ namespace AntivirusApp
             List<String> files = new List<String>();
             try
             {
-                foreach (string f in Directory.GetFiles(sDir,"*.*"))
+                foreach (string f in Directory.GetFiles(sDir, "*.*"))
                 {
                     files.Add(f);
                 }
@@ -124,10 +124,9 @@ namespace AntivirusApp
                     files.AddRange(DirSearch(d));
                 }
             }
-            catch (System.Exception excpt)
-            {                
-            }            
-
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
             return files;
         }        
 
