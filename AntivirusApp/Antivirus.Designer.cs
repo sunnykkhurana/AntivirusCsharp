@@ -42,9 +42,10 @@
             // 
             // btn_Folder
             // 
-            this.btn_Folder.Location = new System.Drawing.Point(28, 26);
+            this.btn_Folder.Location = new System.Drawing.Point(21, 21);
+            this.btn_Folder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Folder.Name = "btn_Folder";
-            this.btn_Folder.Size = new System.Drawing.Size(137, 45);
+            this.btn_Folder.Size = new System.Drawing.Size(103, 37);
             this.btn_Folder.TabIndex = 0;
             this.btn_Folder.Text = "Folder";
             this.btn_Folder.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@
             // 
             // btn_Scan
             // 
-            this.btn_Scan.Location = new System.Drawing.Point(522, 26);
+            this.btn_Scan.Location = new System.Drawing.Point(392, 21);
+            this.btn_Scan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Scan.Name = "btn_Scan";
-            this.btn_Scan.Size = new System.Drawing.Size(137, 45);
+            this.btn_Scan.Size = new System.Drawing.Size(103, 37);
             this.btn_Scan.TabIndex = 1;
             this.btn_Scan.Text = "Scan";
             this.btn_Scan.UseVisualStyleBackColor = true;
@@ -62,25 +64,28 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(28, 130);
+            this.progressBar1.Location = new System.Drawing.Point(21, 106);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(631, 41);
+            this.progressBar1.Size = new System.Drawing.Size(473, 33);
             this.progressBar1.TabIndex = 2;
             // 
             // lbl_FolderPath
             // 
             this.lbl_FolderPath.AutoSize = true;
-            this.lbl_FolderPath.Location = new System.Drawing.Point(28, 219);
+            this.lbl_FolderPath.Location = new System.Drawing.Point(21, 178);
+            this.lbl_FolderPath.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_FolderPath.Name = "lbl_FolderPath";
-            this.lbl_FolderPath.Size = new System.Drawing.Size(89, 17);
+            this.lbl_FolderPath.Size = new System.Drawing.Size(67, 13);
             this.lbl_FolderPath.TabIndex = 3;
             this.lbl_FolderPath.Text = "[Folder Path]";
             // 
             // btn_Done
             // 
-            this.btn_Done.Location = new System.Drawing.Point(522, 193);
+            this.btn_Done.Location = new System.Drawing.Point(392, 157);
+            this.btn_Done.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Done.Name = "btn_Done";
-            this.btn_Done.Size = new System.Drawing.Size(137, 43);
+            this.btn_Done.Size = new System.Drawing.Size(103, 35);
             this.btn_Done.TabIndex = 4;
             this.btn_Done.Text = "Done";
             this.btn_Done.UseVisualStyleBackColor = true;
@@ -90,20 +95,22 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(710, 26);
+            this.listBox1.Location = new System.Drawing.Point(532, 21);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(452, 212);
+            this.listBox1.Size = new System.Drawing.Size(340, 173);
             this.listBox1.TabIndex = 5;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // lbl_cntViruses
             // 
             this.lbl_cntViruses.AutoSize = true;
             this.lbl_cntViruses.ForeColor = System.Drawing.Color.Red;
-            this.lbl_cntViruses.Location = new System.Drawing.Point(308, 53);
+            this.lbl_cntViruses.Location = new System.Drawing.Point(231, 43);
+            this.lbl_cntViruses.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_cntViruses.Name = "lbl_cntViruses";
-            this.lbl_cntViruses.Size = new System.Drawing.Size(55, 17);
+            this.lbl_cntViruses.Size = new System.Drawing.Size(41, 13);
             this.lbl_cntViruses.TabIndex = 6;
             this.lbl_cntViruses.Text = "Viruses";
             this.lbl_cntViruses.Visible = false;
@@ -111,9 +118,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 282);
+            this.label1.Location = new System.Drawing.Point(23, 229);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Searching:";
             this.label1.Visible = false;
@@ -121,18 +129,19 @@
             // lbl_searching
             // 
             this.lbl_searching.AutoSize = true;
-            this.lbl_searching.Location = new System.Drawing.Point(123, 282);
+            this.lbl_searching.Location = new System.Drawing.Point(92, 229);
+            this.lbl_searching.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_searching.Name = "lbl_searching";
-            this.lbl_searching.Size = new System.Drawing.Size(80, 17);
+            this.lbl_searching.Size = new System.Drawing.Size(61, 13);
             this.lbl_searching.TabIndex = 8;
             this.lbl_searching.Text = "[Searching]";
             this.lbl_searching.Visible = false;
             // 
             // Antivirus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 355);
+            this.ClientSize = new System.Drawing.Size(880, 288);
             this.Controls.Add(this.lbl_searching);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_cntViruses);
@@ -142,6 +151,7 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btn_Scan);
             this.Controls.Add(this.btn_Folder);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Antivirus";
             this.Text = "Antivirus";
             this.Load += new System.EventHandler(this.Antivirus_Load);
