@@ -15,7 +15,7 @@
     <asp:Label runat="server" id="StatusLabel" text="Upload status: " />        
         </div>
         <div class="col-md-6">
-            <asp:ListBox ID="listBox1" runat="server" Height="250px" Width="602px"></asp:ListBox>            
+            <asp:ListBox ID="listBox1" runat="server" Height="250px" Width="250px" SelectionMode="Multiple"></asp:ListBox>            
         </div>
         <div class="col-md-4">
             <asp:Label runat="server" id="lbl_Error" Visible="False" ForeColor="Red" />

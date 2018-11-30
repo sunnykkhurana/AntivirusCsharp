@@ -25,46 +25,61 @@ namespace AntivirusWeb
         protected void btnScan_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            StatusLabel.Text = "Upload status: File uploaded!";
+            
             if (FileUpload1.HasFile)
             {
                 try
                 {
+                    StatusLabel.Text = "";
                     int cnt_virus = 0;
+                    string message = "Virus not found!";
                     foreach (HttpPostedFile uploadedFile in FileUpload1.PostedFiles)
                     {
                         string filename = Path.GetFileName(uploadedFile.FileName);
                         string path = Server.MapPath("~/" + uploadedFile.FileName);
-                        uploadedFile.SaveAs(System.IO.Path.Combine(Server.MapPath("~/"), uploadedFile.FileName));
+                        string saveaspath = System.IO.Path.Combine(Server.MapPath("~/"), uploadedFile.FileName);
+                        uploadedFile.SaveAs(saveaspath);
                         StreamReader stream = new StreamReader(path);
                         string read = stream.ReadToEnd();
                         List<string> virus = new List<string>();
                         virus = getData();
+                        
                         foreach (string vrs in virus)
                         {
+                            
                             if (Regex.IsMatch(read, vrs))
                             {
                                 cnt_virus += 1;
-                                listBox1.Items.Add(filename + " (" + vrs + ")" );
-                                StatusLabel.Text = string.Format("{0} Virus detected!", cnt_virus);
+                                listBox1.Items.Add(filename + " (" + vrs + ")");
+                                message = string.Format("{0} Virus detected!", cnt_virus);
 
                             }
-                            else
-                            {
-                                StatusLabel.Text = "Virus not found";
-                            }
 
-                        }                        
+                        }
+                        stream.DiscardBufferedData();
+                        stream.Dispose();
+                        if (File.Exists(path)) { System.IO.File.Delete(path); }
+                        
                     }
-                    FileUpload1.Dispose();
-                                        
-                                        
+                    StatusLabel.Text = message;
+
+
+
                 }
                 catch (Exception ex)
                 {
                     lbl_Error.Visible = true;
                     lbl_Error.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
+                finally
+                {
+                    FileUpload1.Dispose();
+                }
+            }
+            else
+            {
+                lbl_Error.Visible = true;
+                lbl_Error.Text = "Please upload the file!";
             }
         }
         public List<string> getData()
