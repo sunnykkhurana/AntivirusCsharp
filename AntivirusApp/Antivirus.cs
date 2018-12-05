@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -49,6 +50,8 @@ namespace AntivirusApp
             label1.Visible = false;
             lbl_searching.Visible = false;
             string message = "Virus not found!";
+            List<string> virus = new List<string>();
+            virus = getData();
             foreach (string item in search)
             {
                 progressBar1.Increment(1);
@@ -56,7 +59,7 @@ namespace AntivirusApp
                 {
                     StreamReader stream = new StreamReader(item);
                     string read = stream.ReadToEnd();
-                    string[] virus = new string[] { "trojan", "virus", "hacker" };
+                    
                     label1.Visible = true;
                     lbl_searching.Visible = true;
                     lbl_searching.Text = item;
@@ -80,13 +83,12 @@ namespace AntivirusApp
                 catch (Exception)
                 {
 
-                    string read = item;
-                    string[] virusList = new string[] { "trojan", "virus", "hacker" };
+                    string read = item;                    
                     label1.Visible = true;
                     lbl_searching.Visible = true;
                     lbl_searching.Text = item;
                     Application.DoEvents();
-                    foreach (string s in virusList)
+                    foreach (string s in virus)
                     {
                         if (Regex.IsMatch(read,s))
                         {
@@ -167,6 +169,27 @@ namespace AntivirusApp
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public List<string> getData()
+        {
+            List<string> data = new List<string>();
+            string conn = "Data Source=antivirus.database.windows.net;Initial Catalog=Virus;User ID=cagriari;Password=(Fener1907);Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //The query to use
+            SqlConnection connection = new SqlConnection(conn);
+            connection.Open();
+            string oString = "Select * from Antivirus";
+            SqlCommand oCmd = new SqlCommand(oString, connection);
+
+            using (SqlDataReader oReader = oCmd.ExecuteReader())
+            {
+                while (oReader.Read())
+                {
+                    data.Add(oReader["Name"].ToString());
+                }
+            }
+            connection.Close();
+
+            return data;
         }
     }
 }
